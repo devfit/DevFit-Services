@@ -1,0 +1,7 @@
+.project
+.pydevproject
+config.py
+
+*.pyc
+
+ve*/
