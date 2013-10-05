@@ -1,8 +1,8 @@
-from models import LiftData
+from models.models import LiftData
 from models.serializers import LiftDataSerializer
-from commons.utils.Global import URL_PARAM_SEPARATOR, DEFAULT_SORT
+from commons.utils.Global import URL_PARAM_SEPARATOR, DEFAULT_SORT, DEFAULT_ROW_COUNT
 from django.db.models.aggregates import Count
-from filters import LiftDataFilter
+from filters.LiftDataFilter import LiftDataFilter
 
 class LiftDataManager():
     
@@ -23,7 +23,7 @@ class LiftDataManager():
     
     @staticmethod
     def generateLiftDataSearchFilter(urlParams):
-        f = getParamsFromUrl(urlParams)
+        f = LiftDataManager.getParamsFromUrl(urlParams)
 
         sortFields = [DEFAULT_SORT]
         if f['sort']:
@@ -38,4 +38,8 @@ class LiftDataManager():
         searchFilter.set_user(f['user'])
         
         return searchFilter
+    
+    @staticmethod
+    def searchLiftData(requestinUserId, searchFilter):
+        print(searchFilter.set_search_key);
     
