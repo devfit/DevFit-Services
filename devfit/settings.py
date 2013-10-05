@@ -100,6 +100,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 )
 
 ROOT_URLCONF = 'devfit.urls'
@@ -163,7 +164,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 #     'hostname.example.com'
 # )
 
-#CORS_ORIGIN_WHITELIST = None
+# CORS_ORIGIN_WHITELIST = None
 
 # CORS_PREFLIGHT_MAX_AGE: specify the number of seconds a client/browser can cache the preflight response
 # Note: A preflight request is an extra request that is made when making a "not-so-simple" request (eg. content-type is not application/x-www-form-urlencoded) to determine what requests the server actually accepts. Read more about it here: [http://www.html5rocks.com/en/tutorials/cors/](http://www.html5rocks.com/en/tutorials/cors/)
