@@ -124,10 +124,51 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    
+    'rest_framework',
+    'corsheaders',
+    
     'models',
 )
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
+
+#######################################################
+### django-cors-headers                             ###
+### https://github.com/ottoyiu/django-cors-headers/ ###
+#######################################################
+
+# CORS_ALLOW_METHODS: specify the allowed HTTP methods that can be used when making the actual request 
+CORS_ALLOW_METHODS = (
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS'
+)
+# CORS_ALLOW_HEADERS: specify which non-standard HTTP headers can be used when making the actual request
+CORS_ALLOW_HEADERS = (
+    'x-requested-with',
+    'content-type',
+    'accept',
+    'origin',
+    'authorization'
+)
+# CORS_ORIGIN_ALLOW_ALL: if True, the whitelist will not be used and all origins will be accepted
+CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_WHITELIST: specify a list of origin hostnames that are authorized to make a cross-site HTTP request; set to None to allow access to anyone
+# Example:
+# CORS_ORIGIN_WHITELIST = (
+#     'google.com',
+#     'hostname.example.com'
+# )
+CORS_ORIGIN_WHITELIST = ()
+# CORS_PREFLIGHT_MAX_AGE: specify the number of seconds a client/browser can cache the preflight response
+# Note: A preflight request is an extra request that is made when making a "not-so-simple" request (eg. content-type is not application/x-www-form-urlencoded) to determine what requests the server actually accepts. Read more about it here: [http://www.html5rocks.com/en/tutorials/cors/](http://www.html5rocks.com/en/tutorials/cors/)
+CORS_PREFLIGHT_MAX_AGE = 86400
+# CORS_ALLOW_CREDENTIALS: specify whether or not cookies are allowed to be included in cross-site HTTP requests (CORS).
+CORS_ALLOW_CREDENTIALS = False
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
