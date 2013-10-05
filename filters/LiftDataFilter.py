@@ -25,8 +25,10 @@ class LiftDataFilter():
     def get_sort(self):
         return self.__sort
     
+    
     def get_user(self):
         return self.__user
+
 
     def set_search_key(self, value):
         self.__searchKey = value
@@ -43,8 +45,10 @@ class LiftDataFilter():
     def set_sort(self, value):
         self.__sort = value
         
+        
     def set_user(self, value):
         self.__user = value
+
 
     def del_search_key(self):
         del self.__searchKey

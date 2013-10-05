@@ -22,8 +22,9 @@ class LiftDataSearchView(BaseListView):
     serializer_class = LiftDataSerializer
 
     def get(self, request, **kwargs):
+        print (kwargs);
         requestingUserId = request.user.id
         searchFilter = LiftDataManager.generateLiftDataSearchFilter(kwargs)
         notes = LiftDataManager.searchLiftData(requestingUserId, searchFilter)
-        #serializer = self.serializer_class(notes)
-        #return Response(serializer.data)
+        serializer = self.serializer_class(notes)
+        return Response(serializer.data)

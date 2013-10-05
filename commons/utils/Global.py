@@ -1,5 +1,5 @@
 DEFAULT_ROW_COUNT = 100
-DEFAULT_SORT = '-date_created'
+DEFAULT_SORT = 'id'
 URL_PARAM_SEPARATOR = "|"
 # SORT_PARAM_SEPARATOR = "|"
 # IE Blocking iFrame Cookies fix 
