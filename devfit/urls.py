@@ -14,5 +14,5 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^devfit/admin/', include(admin.site.urls)),
     
-    url(r'^devfit/services/', include('models.urls')),
+    url(r'^devfit/services/liftdata/', include('models.urls')),
 )

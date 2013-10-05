@@ -152,8 +152,7 @@ CORS_ALLOW_HEADERS = (
     'x-requested-with',
     'content-type',
     'accept',
-    'origin',
-    'authorization'
+    'origin'
 )
 # CORS_ORIGIN_ALLOW_ALL: if True, the whitelist will not be used and all origins will be accepted
 CORS_ORIGIN_ALLOW_ALL = True
@@ -163,7 +162,9 @@ CORS_ORIGIN_ALLOW_ALL = True
 #     'google.com',
 #     'hostname.example.com'
 # )
-CORS_ORIGIN_WHITELIST = ()
+
+#CORS_ORIGIN_WHITELIST = None
+
 # CORS_PREFLIGHT_MAX_AGE: specify the number of seconds a client/browser can cache the preflight response
 # Note: A preflight request is an extra request that is made when making a "not-so-simple" request (eg. content-type is not application/x-www-form-urlencoded) to determine what requests the server actually accepts. Read more about it here: [http://www.html5rocks.com/en/tutorials/cors/](http://www.html5rocks.com/en/tutorials/cors/)
 CORS_PREFLIGHT_MAX_AGE = 86400
