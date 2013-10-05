@@ -15,4 +15,5 @@ urlpatterns = patterns('',
     url(r'^devfit/admin/', include(admin.site.urls)),
     
     url(r'^devfit/services/liftdata/', include('models.urls')),
+     url(r'^devfit/auth/', include('auth.urls')),
 )

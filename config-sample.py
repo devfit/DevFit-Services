@@ -11,3 +11,7 @@ DATABASES = {
         'PORT': '3306',  # Set to empty string for default.
     }
 }
+
+TEMPLATE_DIRS = (
+    'C:/Users/Woy/Documents/GitHub/DevFit-Services/www',
+)
