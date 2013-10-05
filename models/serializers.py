@@ -1,4 +1,4 @@
-from LiftData import LiftData
+from models import LiftData
 from rest_framework import serializers
         
 class LiftDataSerializer(serializers.ModelSerializer):

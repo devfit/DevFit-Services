@@ -7,7 +7,7 @@ class LiftDataFilter():
         self.__offset = 0
         self.__rowcount = DEFAULT_ROW_COUNT
         self.__sort = [DEFAULT_SORT]
-        self.__classroom_id = None
+        self.__user = None
 
 
     def get_search_key(self):
@@ -24,7 +24,9 @@ class LiftDataFilter():
 
     def get_sort(self):
         return self.__sort
-
+    
+    def get_user(self):
+        return self.__user
 
     def set_search_key(self, value):
         self.__searchKey = value
@@ -40,7 +42,9 @@ class LiftDataFilter():
 
     def set_sort(self, value):
         self.__sort = value
-
+        
+    def set_user(self, value):
+        self.__user = value
 
     def del_search_key(self):
         del self.__searchKey
@@ -57,11 +61,9 @@ class LiftDataFilter():
     def del_sort(self):
         del self.__sort
         
-    
-    def get_classroom_id(self):
-        return self.__classroom_id
-    
-
+    def del_user(self):
+        del self.__user
+        
     searchKey = property(get_search_key, set_search_key, del_search_key, "searchKey's docstring")
     offset = property(get_offset, set_offset, del_offset, "offset's docstring")
     rowcount = property(get_rowcount, set_rowcount, del_rowcount, "rowcount's docstring")
