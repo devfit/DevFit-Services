@@ -1,5 +1,5 @@
-from models import LiftData
-from serializers import LiftDataSerializer
+from models import LiftData, LiftHistory, LiftSet
+from serializers import LiftDataSerializer, LiftHistorySerializer, LiftSetSerializer
 from commons.views.BaseView import BaseRetrieveView, BaseListView, BaseListCreateView, BaseRetrieveUpdateDestroyView
 from rest_framework.response import Response
 from managers.LiftDataManager import LiftDataManager
@@ -28,3 +28,11 @@ class LiftDataSearchView(BaseListView):
         notes = LiftDataManager.searchLiftData(requestingUserId, searchFilter)
         serializer = self.serializer_class(notes)
         return Response(serializer.data)
+
+class LiftHistoryListCreateView(BaseListCreateView):
+    model = LiftHistory
+    serializer_class = LiftHistorySerializer
+    
+class LiftSetListCreateView(BaseListCreateView):
+    model = LiftSet
+    serializer_class = LiftSetSerializer
