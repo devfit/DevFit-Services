@@ -57,8 +57,3 @@ class LiftDataManager():
         notes = eval(noteQueryString)
         return notes
     
-    @staticmethod
-    def addLiftData(requestingUserId, urlParams):
-        #
-        print("userid: " + requestingUserId)
-        return true;

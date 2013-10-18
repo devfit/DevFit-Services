@@ -16,16 +16,7 @@ class LiftDataListCreateView(BaseListCreateView):
 class LiftDataRetrieveUpdateDestroy(BaseRetrieveUpdateDestroyView):
     model = LiftData
     serializer_class = LiftDataSerializer
-    
-class LiftDataCreateView(BaseCreateView):
-    model = LiftData
-    serializer_class = LiftDataSerializer
-    def add(self, request, **kwargs):
-        print ("add service")
-        requestingUserId = request.user.id
-        success = LiftDataManager.addLiftData(requestingUserId, kwargs)
-        return success
-    
+        
 class LiftDataSearchView(BaseListView):
     model = LiftData
     serializer_class = LiftDataSerializer
