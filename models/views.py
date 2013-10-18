@@ -1,6 +1,6 @@
 from models import LiftData, LiftHistory, LiftSet
 from serializers import LiftDataSerializer, LiftHistorySerializer, LiftSetSerializer
-from commons.views.BaseView import BaseRetrieveView, BaseListView, BaseListCreateView, BaseRetrieveUpdateDestroyView
+from commons.views.BaseView import BaseRetrieveView, BaseListView, BaseCreateView, BaseListCreateView, BaseRetrieveUpdateDestroyView
 from rest_framework.response import Response
 from managers.LiftDataManager import LiftDataManager
 
@@ -16,6 +16,15 @@ class LiftDataListCreateView(BaseListCreateView):
 class LiftDataRetrieveUpdateDestroy(BaseRetrieveUpdateDestroyView):
     model = LiftData
     serializer_class = LiftDataSerializer
+    
+class LiftDataCreateView(BaseCreateView):
+    model = LiftData
+    serializer_class = LiftDataSerializer
+    def add(self, request, **kwargs):
+        print ("add service")
+        requestingUserId = request.user.id
+        success = LiftDataManager.addLiftData(requestingUserId, kwargs)
+        return success
     
 class LiftDataSearchView(BaseListView):
     model = LiftData

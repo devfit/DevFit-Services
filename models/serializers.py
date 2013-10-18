@@ -4,14 +4,14 @@ from rest_framework import serializers
 class LiftDataSerializer(serializers.ModelSerializer):
     class Meta:
         model = LiftData
-        fields = ['id', 'name', 'user', 'history', ]
+        fields = ['name', 'user', ]
 
 class LiftHistorySerializer(serializers.ModelSerializer):
     class Meta:
         model = LiftHistory
-        fields = ['id', 'one_rep_max', 'date', 'week', 'cycle', 'sets', ]
+        fields = ['id', 'lift_data', 'one_rep_max', 'date', 'week', 'cycle', ]
 
 class LiftSetSerializer(serializers.ModelSerializer):
     class Meta:
         model = LiftSet
-        fields = ['id', 'set', 'reps', 'weight', ]
+        fields = ['id', 'lift_data', 'lift_history', 'set', 'reps', 'weight', ]
