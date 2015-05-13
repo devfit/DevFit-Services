@@ -1,5 +1,6 @@
 DevFit-Services
 ===============
+@deprecated - Devfit project will contain services
 
 Service Layer for DevFit
 
